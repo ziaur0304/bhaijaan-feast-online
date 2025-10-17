@@ -7,7 +7,7 @@ const Contact = () => {
   };
 
   const openMaps = () => {
-    window.open('https://maps.google.com/?q=8RGV+QGR+Bhaijaan+Cafe', '_blank');
+    window.open('https://maps.app.goo.gl/ebyBGNbj63N2ay7W7', '_blank');
   };
 
   const openInstagram = () => {
@@ -95,7 +95,7 @@ const Contact = () => {
           {/* Map */}
           <div className="h-[500px] rounded-lg overflow-hidden shadow-elegant animate-scale-in">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3571.234567890123!2d91.09!3d26.27!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDE2JzEwLjQiTiA5McKwMDUnMjQuMCJF!5e0!3m2!1sen!2sin!4v1234567890123"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3573.9362819572474!2d91.08666047544208!3d26.394723176944783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375a41f63e2c25e5%3A0x8b7e7b7e7b7e7b7e!2sBhaijaan%20Cafe!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0 }}
