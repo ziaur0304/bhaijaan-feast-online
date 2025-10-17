@@ -6,7 +6,7 @@ import { useCart } from '@/context/CartContext';
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { getItemCount } = useCart();
+  const { getItemCount, openCart } = useCart();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,7 +58,7 @@ const Navigation = () => {
                 {link.name}
               </button>
             ))}
-            <Button onClick={() => scrollToSection('menu')} className="bg-gradient-primary">
+            <Button onClick={openCart} className="bg-gradient-primary">
               Order Now
             </Button>
           </div>
@@ -66,7 +66,7 @@ const Navigation = () => {
           {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center gap-4">
             <button
-              onClick={() => scrollToSection('menu')}
+              onClick={openCart}
               className="relative"
               aria-label="Cart"
             >
@@ -100,7 +100,7 @@ const Navigation = () => {
               </button>
             ))}
             <Button
-              onClick={() => scrollToSection('menu')}
+              onClick={openCart}
               className="w-full bg-gradient-primary"
             >
               Order Now

@@ -2,14 +2,10 @@ import { Button } from '@/components/ui/button';
 import MenuCard from './MenuCard';
 import { menuData, categories } from '@/data/menuData';
 import { ShoppingBag } from 'lucide-react';
+import { useCart } from '@/context/CartContext';
 
 const Menu = () => {
-  const scrollToContact = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const { openCart } = useCart();
 
   return (
     <section id="menu" className="py-20 bg-background">
@@ -23,7 +19,7 @@ const Menu = () => {
             Explore our delicious selection of Indian and Mughlai favorites
           </p>
           <Button
-            onClick={scrollToContact}
+            onClick={openCart}
             size="lg"
             className="bg-gradient-accent hover:opacity-90"
           >
@@ -52,7 +48,7 @@ const Menu = () => {
 
         <div className="text-center mt-12">
           <Button
-            onClick={scrollToContact}
+            onClick={openCart}
             size="lg"
             className="bg-gradient-accent hover:opacity-90"
           >

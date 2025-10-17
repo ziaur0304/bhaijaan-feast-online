@@ -4,6 +4,10 @@ import { toast } from '@/hooks/use-toast';
 
 interface CartContextType {
   cart: CartItem[];
+  isCartOpen: boolean;
+  openCart: () => void;
+  closeCart: () => void;
+  toggleCart: () => void;
   addToCart: (item: MenuItem, size?: 'half' | 'full' | 'steam' | 'fried') => void;
   removeFromCart: (itemId: string) => void;
   updateQuantity: (itemId: string, quantity: number) => void;
@@ -16,6 +20,11 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [cart, setCart] = useState<CartItem[]>([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  const openCart = () => setIsCartOpen(true);
+  const closeCart = () => setIsCartOpen(false);
+  const toggleCart = () => setIsCartOpen(prev => !prev);
 
   const addToCart = (item: MenuItem, size?: 'half' | 'full' | 'steam' | 'fried') => {
     let selectedPrice = item.price || 0;
@@ -73,7 +82,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, removeFromCart, updateQuantity, clearCart, getTotal, getItemCount }}
+      value={{ cart, isCartOpen, openCart, closeCart, toggleCart, addToCart, removeFromCart, updateQuantity, clearCart, getTotal, getItemCount }}
     >
       {children}
     </CartContext.Provider>

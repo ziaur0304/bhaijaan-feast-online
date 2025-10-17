@@ -7,10 +7,9 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 
 const FloatingCart = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const [customerName, setCustomerName] = useState('');
   const [customerAddress, setCustomerAddress] = useState('');
-  const { cart, updateQuantity, removeFromCart, clearCart, getTotal, getItemCount } = useCart();
+  const { cart, isCartOpen, openCart, closeCart, updateQuantity, removeFromCart, clearCart, getTotal, getItemCount } = useCart();
 
   const handlePlaceOrder = () => {
     if (!customerName.trim() || !customerAddress.trim()) {
@@ -38,14 +37,14 @@ const FloatingCart = () => {
     clearCart();
     setCustomerName('');
     setCustomerAddress('');
-    setIsOpen(false);
+    closeCart();
   };
 
   return (
     <>
       {/* Floating Cart Button */}
       <button
-        onClick={() => setIsOpen(true)}
+        onClick={openCart}
         className="fixed bottom-6 right-6 z-50 w-16 h-16 bg-gradient-primary rounded-full shadow-elegant flex items-center justify-center hover:scale-110 transition-transform"
         aria-label="Open Cart"
       >
@@ -58,18 +57,18 @@ const FloatingCart = () => {
       </button>
 
       {/* Cart Panel */}
-      {isOpen && (
+      {isCartOpen && (
         <>
           <div
             className="fixed inset-0 bg-foreground/50 backdrop-blur-sm z-50"
-            onClick={() => setIsOpen(false)}
+            onClick={closeCart}
           />
           <Card className="fixed top-0 right-0 bottom-0 w-full md:w-[500px] z-50 overflow-y-auto animate-slide-in">
             <CardHeader className="border-b sticky top-0 bg-background z-10">
               <div className="flex items-center justify-between">
                 <CardTitle className="font-playfair text-2xl">Your Order</CardTitle>
                 <button
-                  onClick={() => setIsOpen(false)}
+                  onClick={closeCart}
                   className="text-muted-foreground hover:text-foreground"
                   aria-label="Close Cart"
                 >
