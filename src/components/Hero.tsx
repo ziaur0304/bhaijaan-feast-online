@@ -19,7 +19,7 @@ const Hero = () => {
       </div>
 
       <div className="relative z-10 container mx-auto px-4 text-center text-primary-foreground animate-fade-in">
-        <h1 className="font-playfair text-5xl md:text-7xl lg:text-8xl font-bold mb-6 drop-shadow-lg" style={{ color: 'hsl(45, 90%, 35%)' }}>
+        <h1 className="font-playfair text-5xl md:text-7xl lg:text-8xl font-bold mb-6 drop-shadow-lg text-white">
           Bhaijaan Cafe
         </h1>
         <p className="font-poppins text-xl md:text-2xl lg:text-3xl mb-4 drop-shadow-md">
