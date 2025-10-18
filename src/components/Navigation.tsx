@@ -42,8 +42,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           <button
             onClick={() => scrollToSection('home')}
-            className="font-playfair text-2xl md:text-3xl font-bold"
-            style={{ color: 'hsl(45, 90%, 35%)' }}
+            className="font-playfair text-2xl md:text-3xl font-bold text-foreground"
           >
             Bhaijaan Cafe
           </button>
