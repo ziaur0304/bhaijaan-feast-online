@@ -27,13 +27,14 @@ export const menuData: MenuItem[] = [
 
   // Drinks
   { id: 'drink-1', name: 'Milk Tea', category: 'Drinks', price: 10 },
-  { id: 'drink-2', name: 'Red Tea', category: 'Drinks', price: 10 },
-  { id: 'drink-3', name: 'Hot Coffee', category: 'Drinks', price: 40 },
-  { id: 'drink-4', name: 'Cold Coffee', category: 'Drinks', price: 90 },
-  { id: 'drink-5', name: 'Masala Drink', category: 'Drinks', price: 50 },
-  { id: 'drink-6', name: 'Lemon Drink', category: 'Drinks', price: 50 },
-  { id: 'drink-7', name: 'Lassi', category: 'Drinks', price: 100 },
-  { id: 'drink-8', name: 'Coke', category: 'Drinks', price: 50 },
+    { id: 'drink-2', name: 'Milk Tea - Bhaijaan special', category: 'Drinks', price: 20 },
+  { id: 'drink-3', name: 'Red Tea', category: 'Drinks', price: 10 },
+  { id: 'drink-4', name: 'Hot Coffee', category: 'Drinks', price: 40 },
+  { id: 'drink-5', name: 'Cold Coffee', category: 'Drinks', price: 90 },
+  { id: 'drink-6', name: 'Masala Drink', category: 'Drinks', price: 50 },
+  { id: 'drink-7', name: 'Lemon Drink', category: 'Drinks', price: 50 },
+  { id: 'drink-8', name: 'Lassi', category: 'Drinks', price: 100 },
+  { id: 'drink-9', name: 'Coke', category: 'Drinks', price: 50 },
 
   // Indian
   { id: 'indian-1', name: 'Plain Rice', category: 'Indian', price: 60 },
