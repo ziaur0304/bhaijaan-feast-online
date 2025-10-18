@@ -11,6 +11,7 @@ export interface MenuItem {
 }
 
 export interface CartItem extends MenuItem {
+  cartItemId: string;
   quantity: number;
   selectedSize?: 'half' | 'full' | 'steam' | 'fried';
   selectedPrice: number;

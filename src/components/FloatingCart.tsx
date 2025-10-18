@@ -85,9 +85,9 @@ const FloatingCart = () => {
               ) : (
                 <>
                   <div className="space-y-4 mb-6">
-                    {cart.map((item, index) => (
+                    {cart.map((item) => (
                       <div
-                        key={`${item.id}-${item.selectedSize}-${index}`}
+                        key={item.cartItemId}
                         className="flex items-center gap-4 p-4 bg-secondary rounded-lg"
                       >
                         <div className="flex-1">
@@ -103,7 +103,7 @@ const FloatingCart = () => {
                           <Button
                             size="icon"
                             variant="outline"
-                            onClick={() => updateQuantity(`${item.id}-${item.selectedSize}-${index}`, item.quantity - 1)}
+                            onClick={() => updateQuantity(item.cartItemId, item.quantity - 1)}
                           >
                             <Minus className="w-4 h-4" />
                           </Button>
@@ -111,14 +111,14 @@ const FloatingCart = () => {
                           <Button
                             size="icon"
                             variant="outline"
-                            onClick={() => updateQuantity(`${item.id}-${item.selectedSize}-${index}`, item.quantity + 1)}
+                            onClick={() => updateQuantity(item.cartItemId, item.quantity + 1)}
                           >
                             <Plus className="w-4 h-4" />
                           </Button>
                           <Button
                             size="icon"
                             variant="destructive"
-                            onClick={() => removeFromCart(`${item.id}-${item.selectedSize}-${index}`)}
+                            onClick={() => removeFromCart(item.cartItemId)}
                           >
                             <Trash2 className="w-4 h-4" />
                           </Button>

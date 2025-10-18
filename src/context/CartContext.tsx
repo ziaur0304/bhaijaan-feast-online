@@ -43,7 +43,8 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       updatedCart[existingItemIndex].quantity += 1;
       setCart(updatedCart);
     } else {
-      setCart([...cart, { ...item, quantity: 1, selectedSize: size, selectedPrice }]);
+      const cartItemId = `${item.id}-${size || 'default'}-${Date.now()}`;
+      setCart([...cart, { ...item, cartItemId, quantity: 1, selectedSize: size, selectedPrice }]);
     }
 
     toast({
@@ -52,16 +53,16 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     });
   };
 
-  const removeFromCart = (itemId: string) => {
-    setCart(cart.filter((item) => item.id !== itemId));
+  const removeFromCart = (cartItemId: string) => {
+    setCart(cart.filter((item) => item.cartItemId !== cartItemId));
   };
 
-  const updateQuantity = (itemId: string, quantity: number) => {
+  const updateQuantity = (cartItemId: string, quantity: number) => {
     if (quantity <= 0) {
-      removeFromCart(itemId);
+      removeFromCart(cartItemId);
       return;
     }
-    setCart(cart.map((item) => (item.id === itemId ? { ...item, quantity } : item)));
+    setCart(cart.map((item) => (item.cartItemId === cartItemId ? { ...item, quantity } : item)));
   };
 
   const clearCart = () => {
