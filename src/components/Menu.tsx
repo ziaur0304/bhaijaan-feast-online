@@ -3,6 +3,23 @@ import MenuCard from './MenuCard';
 import { menuData, categories } from '@/data/menuData';
 import { ShoppingBag } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
+import pokoraImg from '@/assets/pokora.jpg';
+import rollImg from '@/assets/roll.jpg';
+import momoImg from '@/assets/momo.jpg';
+import biryaniImg from '@/assets/biryani.jpg';
+import chowmeinImg from '@/assets/chowmein.jpg';
+import drinksImg from '@/assets/drinks.jpg';
+import indianImg from '@/assets/indian.jpg';
+
+const categoryImages: Record<string, string> = {
+  'Pokora': pokoraImg,
+  'Roll': rollImg,
+  'Momo': momoImg,
+  'Biriyani': biryaniImg,
+  'Chowmein': chowmeinImg,
+  'Drinks': drinksImg,
+  'Indian': indianImg,
+};
 
 const Menu = () => {
   const { openCart } = useCart();
@@ -34,9 +51,16 @@ const Menu = () => {
 
           return (
             <div key={category} className="mb-16">
-              <h3 className="font-playfair text-3xl font-bold text-foreground mb-8 text-center md:text-left">
-                {category}
-              </h3>
+              <div className="flex items-center gap-4 mb-8">
+                <img 
+                  src={categoryImages[category]} 
+                  alt={category}
+                  className="w-16 h-16 object-cover rounded-lg shadow-soft"
+                />
+                <h3 className="font-playfair text-3xl font-bold text-foreground">
+                  {category}
+                </h3>
+              </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {items.map((item) => (
                   <MenuCard key={item.id} item={item} />
