@@ -14,7 +14,8 @@ export const menuData: MenuItem[] = [
   { id: 'roll-4', name: 'Paneer Roll', category: 'Roll', price: 80 },
 
   // Momo
-  { id: 'momo-1', name: 'Chicken Momo', category: 'Momo', priceSteam: 80, priceFried: 100 },
+  { id: 'momo-1', name: 'Chicken Momo (Steam)', category: 'Momo', price: 80 },
+  { id: 'momo-2', name: 'Chicken Momo (Fried)', category: 'Momo', price: 100 },
 
   // Biriyani
   { id: 'biryani-1', name: 'Chicken Biriyani', category: 'Biriyani', priceHalf: 70, priceFull: 140 },
